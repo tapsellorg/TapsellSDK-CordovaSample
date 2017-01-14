@@ -1,0 +1,67 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"TapsellCordovaInterface\"><param name=\"android-package\" value=\"ir.tapsell.sdk.TapsellCordovaInterface\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:configChanges=\"keyboardHidden|orientation|screenSize\" android:name=\"ir.tapsell.sdk.TapsellAdActivity\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "ir.tapsell.sample"
+        },
+        "tapsell-v3-cordova-plugin": {
+            "PACKAGE_NAME": "ir.tapsell.sample"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/tapsell-v3-cordova-plugin/www/tapsell.js",
+            "id": "tapsell-v3-cordova-plugin.tapsell",
+            "pluginId": "tapsell-v3-cordova-plugin",
+            "clobbers": [
+                "window.tapsell"
+            ]
+        }
+    ]
+}
