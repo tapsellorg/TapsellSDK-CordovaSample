@@ -53,7 +53,7 @@ var app = {
 	
 	onRequestAd: function() {
 		console.log('tapsell onRequestAd');
-		tapsell.requestAd(null,function(result){
+		tapsell.requestAd(null,false,function(result){
 			if(result['action']=='onAdAvailable')
 			{	
 				zoneId = result['zoneId']; 
@@ -92,12 +92,10 @@ var app = {
 		console.log('tapsell onShowAd');
 		showBtn.setAttribute('style', 'display:none;');
 		tapsell.showAd(adId,false,false,tapsell_rotation_unlocked,function (result){
-			console.log('tapsell showAdFinished');
 			requestBtn.setAttribute('style', 'display:block;');
 			if(result['action']=='onAdShowFinished')
 			{
-				console.log('tapsell showAdFinished with action');
-				//alert('onAdShowFinished');
+				console.log('tapsell showAdFinished');
 			}
 		});
 	},
