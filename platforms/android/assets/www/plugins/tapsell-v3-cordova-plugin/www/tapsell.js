@@ -2,6 +2,8 @@ cordova.define("tapsell-v3-cordova-plugin.tapsell", function(require, exports, m
 window.tapsell_rotation_locked_portrait = 1;
 window.tapsell_rotation_locked_landscape = 2;
 window.tapsell_rotation_unlocked = 3;
+window.tapsell_rotation_locked_reversed_portrait = 4;
+window.tapsell_rotation_locked_reversed_landscape = 5;
 
 module.exports = {
 	initialize: function(appKey) {
