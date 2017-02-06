@@ -49,6 +49,15 @@ var app = {
 		requestBtn.addEventListener('click',app.onRequestAd);
 		showBtn.addEventListener('click',app.onShowAd);
 		tapsell.initialize('rashssjnjiaeqqeihgjdsihajkbkqgeqqdoftpafmlcoofdflejgmttlercbsdfbnjnjqs');
+		tapsell.setDebugMode(true);
+		tapsell.setAutoHandlePermissions(true);
+		tapsell.setMaxAllowedBandwidthUsagePercentage(50);
+		tapsell.getVersion(function(result){
+			if(result['action']=='getVersion')
+			{
+				console.log('tapsell version: '+result['version']);
+			}
+		});
     },
 	
 	onRequestAd: function() {
@@ -91,11 +100,13 @@ var app = {
 	onShowAd: function() {
 		console.log('tapsell onShowAd');
 		showBtn.setAttribute('style', 'display:none;');
-		tapsell.showAd(adId,false,false,tapsell_rotation_unlocked,function (result){
+		tapsell.showAd(adId,false,false,tapsell_rotation_unlocked,true,function (result){
 			requestBtn.setAttribute('style', 'display:block;');
 			if(result['action']=='onAdShowFinished')
 			{
 				console.log('tapsell showAdFinished');
+				console.log('completed: '+result['completed']);
+				console.log('rewarded: '+result['rewarded']);
 			}
 		});
 	},
