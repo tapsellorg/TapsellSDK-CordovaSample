@@ -36,7 +36,7 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 	
 	private final Map<String,CallbackContext> zoneCallbacks = Collections.synchronizedMap(new WeakHashMap<String, CallbackContext>());
 
-    private CallbackContext defaultZoneCallback=null;
+	private CallbackContext defaultZoneCallback=null;
 	
 	private CallbackContext adRewardCallback=null;
 	
@@ -69,6 +69,10 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 		else if (action.equals("showAd")) {
 			showAd(args, callbackContext);
 		    return true;
+		}
+		else if  (action.equals("setRewardCallback")) {
+			setRewardCallback(args,callbackContext);
+			return true;
 		}
 		else if (action.equals("getAndroidVersion")) {
 			getAndroidVersion(args, callbackContext);
@@ -212,14 +216,15 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 	{
 		final String zoneId = args.getString(0);
 		boolean isAdReady = TapsellExtraPlatforms.isAdReadyToShow(cordova.getActivity(),zoneId);
-		if(isAdReady)
-		{
-			callbackContext.success();
-		}
-		else
-		{
-			callbackContext.error("No ad is ready.");
-		}
+		JSONObject result = new JSONObject();
+		try{
+			result.put("isAdReady",isAdReady);
+			PluginResult resultado = new PluginResult(PluginResult.Status.OK, result);
+			resultado.setKeepCallback(true);
+			callbackContext.sendPluginResult(resultado);
+		} catch (Exception e) {
+            e.printStackTrace();
+        }
 	}
 	
 	private void getVersion(JSONArray args, CallbackContext callbackContext) throws JSONException
@@ -245,6 +250,11 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 		final int rotation_mode = args.getInt(3);
 		final boolean show_dialog = args.getBoolean(4);
 		TapsellExtraPlatforms.showAd(cordova.getActivity(),adId,back_disabled,immersive_mode,rotation_mode, show_dialog);
+		//adRewardCallback = callbackContext;
+	}
+	
+	private void setRewardCallback(JSONArray args, CallbackContext callbackContext) throws JSONException
+	{
 		adRewardCallback = callbackContext;
 	}
 	

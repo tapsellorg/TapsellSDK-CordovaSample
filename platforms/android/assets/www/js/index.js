@@ -58,6 +58,15 @@ var app = {
 				console.log('tapsell version: '+result['version']);
 			}
 		});
+		tapsell.setRewardCallback(function (result){
+			requestBtn.setAttribute('style', 'display:block;');
+			if(result['action']=='onAdShowFinished')
+			{
+				console.log('tapsell showAdFinished');
+				console.log('completed: '+result['completed']);
+				console.log('rewarded: '+result['rewarded']);
+			}
+		});
     },
 	
 	onRequestAd: function() {
@@ -100,15 +109,7 @@ var app = {
 	onShowAd: function() {
 		console.log('tapsell onShowAd');
 		showBtn.setAttribute('style', 'display:none;');
-		tapsell.showAd(adId,false,false,tapsell_rotation_unlocked,true,function (result){
-			requestBtn.setAttribute('style', 'display:block;');
-			if(result['action']=='onAdShowFinished')
-			{
-				console.log('tapsell showAdFinished');
-				console.log('completed: '+result['completed']);
-				console.log('rewarded: '+result['rewarded']);
-			}
-		});
+		tapsell.showAd(adId,false,false,tapsell_rotation_unlocked,true);
 	},
 	
     // Update DOM on a Received Event
