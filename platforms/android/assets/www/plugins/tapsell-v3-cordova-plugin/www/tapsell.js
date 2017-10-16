@@ -1,4 +1,5 @@
-cordova.define("tapsell-v3-cordova-plugin.tapsell", function(require, exports, module) { 
+cordova.define("tapsell-v3-cordova-plugin.tapsell", function(require, exports, module) {
+
 window.tapsell_rotation_locked_portrait = 1;
 window.tapsell_rotation_locked_landscape = 2;
 window.tapsell_rotation_unlocked = 3;
@@ -11,9 +12,6 @@ module.exports = {
 	},
 	requestAd: function(zoneId, icCached, callback) {
 		cordova.exec(callback, null, "TapsellCordovaInterface", "requestAd", [ zoneId , icCached]);		
-	},
-	isAdReadyToShow: function(zoneId, callback) {
-		cordova.exec(callback, null, "TapsellCordovaInterface", "isAdReadyToShow", [ zoneId ]);		
 	},
 	showAd: function(adId,back_disabled,immersive_mode,rotation_mode, show_dialog, callback) {
 		cordova.exec(null, null, "TapsellCordovaInterface", "showAd", [ adId,back_disabled,immersive_mode,rotation_mode,show_dialog ]);		
@@ -50,6 +48,9 @@ module.exports = {
 	},
 	replay: function() {
 		cordova.exec(null,null,"TapsellCordovaInterface","replay",[ 0 ]);
+	},
+	dismiss: function() {
+		cordova.exec(null,null,"TapsellCordovaInterface","dismiss",[ 0 ]);
 	}
 };
 });

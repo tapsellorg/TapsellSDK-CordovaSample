@@ -109,7 +109,20 @@ var app = {
 	onShowAd: function() {
 		console.log('tapsell onShowAd');
 		showBtn.setAttribute('style', 'display:none;');
-		tapsell.showAd(adId,false,false,tapsell_rotation_unlocked,true);
+		tapsell.showAd(adId,false,false,tapsell_rotation_unlocked,true,function(result){
+			if(result['action']=='onOpened')
+			{	
+				zoneId = result['zoneId']; 
+				adId = result['adId']; // id of the found ad
+				console.log('tapsell onOpened');
+			}
+			else if(result['action']=='onClosed')
+			{
+				zoneId = result['zoneId']; 
+				adId = result['adId']; // id of the found ad
+				console.log('tapsell onClosed');
+			}
+		});
 	},
 	
     // Update DOM on a Received Event

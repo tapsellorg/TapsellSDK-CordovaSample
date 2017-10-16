@@ -49,6 +49,9 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "ir.tapsell.sample"
         },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "ir.tapsell.sample"
+        },
         "tapsell-v3-cordova-plugin": {
             "PACKAGE_NAME": "ir.tapsell.sample"
         }
@@ -56,12 +59,16 @@
     "dependent_plugins": {},
     "modules": [
         {
-            "file": "plugins/tapsell-v3-cordova-plugin/www/tapsell.js",
             "id": "tapsell-v3-cordova-plugin.tapsell",
+            "file": "plugins/tapsell-v3-cordova-plugin/www/tapsell.js",
             "pluginId": "tapsell-v3-cordova-plugin",
             "clobbers": [
                 "window.tapsell"
             ]
         }
-    ]
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-console": "1.1.0",
+        "tapsell-v3-cordova-plugin": "3.0.44"
+    }
 }

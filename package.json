@@ -1,0 +1,23 @@
+{
+    "name": "ir.tapsell.sample",
+    "version": "0.0.1",
+    "displayName": "TapsellSDKv3Sample",
+    "cordova": {
+        "platforms": [
+            "android",
+            "ios"
+        ],
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-console": {},
+            "tapsell-v3-cordova-plugin": {}
+        }
+    },
+    "dependencies": {
+        "cordova-android": "^6.2.3",
+        "cordova-ios": "~4.4.0",
+        "cordova-plugin-console": "^1.1.0",
+        "cordova-plugin-whitelist": "1",
+        "tapsell-v3-cordova-plugin": "^3.0.44"
+    }
+}

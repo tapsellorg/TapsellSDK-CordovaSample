@@ -24,7 +24,6 @@ import java.util.WeakHashMap;
 
 import ir.tapsell.sdk.TapsellCordovaListener;
 import ir.tapsell.sdk.TapsellCordova;
-import ir.tapsell.sdk.TapsellExtraPlatforms;
 import ir.tapsell.sdk.TapsellAdActivity;
 
 
@@ -37,6 +36,8 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 	private final Map<String,CallbackContext> zoneCallbacks = Collections.synchronizedMap(new WeakHashMap<String, CallbackContext>());
 
 	private CallbackContext defaultZoneCallback=null;
+
+	private CallbackContext showAdCallback=null;
 	
 	private CallbackContext adRewardCallback=null;
 	
@@ -56,10 +57,6 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 		}
 		else if (action.equals("requestAd")) {
 	    	requestAd(args, callbackContext);
-		    return true;
-		}
-		else if (action.equals("isAdReadyToShow")) {
-			isAdReadyToShow(args, callbackContext);
 		    return true;
 		}
 		else if (action.equals("getVersion")) {
@@ -98,6 +95,10 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 			setAutoHandlePermissions(args, callbackContext);
 			return true;
 		}
+		else if (action.equals("setPermissionHandlerConfig")) {
+			setPermissionHandlerConfig(args, callbackContext);
+			return true;
+		}
 		else if (action.equals("setAppUserId")) {
 			setAppUserId(args, callbackContext);
 			return true;
@@ -112,6 +113,10 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 		}
 		else if (action.equals("replay")) {
 			replay(args, callbackContext);
+			return true;
+		}
+		else if (action.equals("dismiss")) {
+			dismiss(args, callbackContext);
 			return true;
 		}
 	    return false;
@@ -134,41 +139,48 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 	private void setDebugMode(JSONArray args, CallbackContext callbackContext) throws JSONException
 	{
 		final boolean debug = args.getBoolean(0);
-		TapsellExtraPlatforms.setDebugMode(cordova.getActivity(), debug);
+		TapsellCordova.setDebugMode(cordova.getActivity(), debug);
 		callbackContext.success();
 	}
 	
 	private void setAppUserId(JSONArray args, CallbackContext callbackContext) throws JSONException
 	{
 		final String appUserId = args.getString(0);
-		TapsellExtraPlatforms.setAppUserId(cordova.getActivity(), appUserId);
+		TapsellCordova.setAppUserId(cordova.getActivity(), appUserId);
 		callbackContext.success();
 	}
 	
 	private void setAutoHandlePermissions(JSONArray args, CallbackContext callbackContext) throws JSONException
 	{
 		final boolean handle = args.getBoolean(0);
-		TapsellExtraPlatforms.setAutoHandlePermissions(cordova.getActivity(), handle);
+		TapsellCordova.setAutoHandlePermissions(cordova.getActivity(), handle);
 		callbackContext.success();
 	}
 	
+	private void setPermissionHandlerConfig(JSONArray args, CallbackContext callbackContext) throws JSONException
+	{
+		final int permissionHandlerConfig = args.getInt(0);
+		TapsellCordova.setPermissionHandlerConfig(cordova.getActivity(), permissionHandlerConfig);
+		callbackContext.success();
+    }
+	
 	private void setMaxAllowedBandwidthUsage(JSONArray args, CallbackContext callbackContext) throws JSONException
 	{
-		final long maxBpsSpeed = args.getLong(0);
-		TapsellExtraPlatforms.setMaxAllowedBandwidthUsage(cordova.getActivity(), maxBpsSpeed);
+		final int maxBpsSpeed = args.getInt(0);
+		TapsellCordova.setMaxAllowedBandwidthUsage(cordova.getActivity(), maxBpsSpeed);
 		callbackContext.success();
 	}
 	
 	private void setMaxAllowedBandwidthUsagePercentage(JSONArray args, CallbackContext callbackContext) throws JSONException
 	{
 		final int maxPercentage = args.getInt(0);
-		TapsellExtraPlatforms.setMaxAllowedBandwidthUsagePercentage(cordova.getActivity(), maxPercentage);
+		TapsellCordova.setMaxAllowedBandwidthUsagePercentage(cordova.getActivity(), maxPercentage);
 		callbackContext.success();
 	}
 	
 	private void clearBandwidthUsageConstrains(JSONArray args, CallbackContext callbackContext) throws JSONException
 	{
-		TapsellExtraPlatforms.clearBandwidthUsageConstrains(cordova.getActivity());
+		TapsellCordova.clearBandwidthUsageConstrains(cordova.getActivity());
 		callbackContext.success();
 	}
 	
@@ -177,7 +189,7 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 		JSONObject result = new JSONObject();
 		try{
 			result.put("action","isDebugMode");
-			result.put("debug",TapsellExtraPlatforms.isDebugMode(cordova.getActivity()));
+			result.put("debug",TapsellCordova.isDebugMode(cordova.getActivity()));
 			PluginResult resultado = new PluginResult(PluginResult.Status.OK, result);
 			resultado.setKeepCallback(true);
 			callbackContext.sendPluginResult(resultado);
@@ -189,7 +201,7 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 	private void initialize(JSONArray args, CallbackContext callbackContext) throws JSONException
 	{
 		final String appKey = args.getString(0);
-		TapsellExtraPlatforms.initialize(cordova.getActivity(),appKey);
+		TapsellCordova.initialize(cordova.getActivity(),appKey);
 		callbackContext.success();
 	}
 	
@@ -209,27 +221,12 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 		{
 			defaultZoneCallback = callbackContext;
 		}
-		TapsellExtraPlatforms.requestAd(cordova.getActivity(),zoneId,isCached);
-	}
-	
-	private void isAdReadyToShow(JSONArray args, CallbackContext callbackContext) throws JSONException
-	{
-		final String zoneId = args.getString(0);
-		boolean isAdReady = TapsellExtraPlatforms.isAdReadyToShow(cordova.getActivity(),zoneId);
-		JSONObject result = new JSONObject();
-		try{
-			result.put("isAdReady",isAdReady);
-			PluginResult resultado = new PluginResult(PluginResult.Status.OK, result);
-			resultado.setKeepCallback(true);
-			callbackContext.sendPluginResult(resultado);
-		} catch (Exception e) {
-            e.printStackTrace();
-        }
+		TapsellCordova.requestAd(cordova.getActivity(),zoneId,isCached);
 	}
 	
 	private void getVersion(JSONArray args, CallbackContext callbackContext) throws JSONException
 	{
-		String version = TapsellExtraPlatforms.getVersion();
+		String version = TapsellCordova.getVersion();
 		JSONObject result = new JSONObject();
 		try{
 			result.put("action","getVersion");
@@ -249,7 +246,8 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 		final boolean immersive_mode = args.getBoolean(2);
 		final int rotation_mode = args.getInt(3);
 		final boolean show_dialog = args.getBoolean(4);
-		TapsellExtraPlatforms.showAd(cordova.getActivity(),adId,back_disabled,immersive_mode,rotation_mode, show_dialog);
+		TapsellCordova.showAd(cordova.getActivity(),adId,back_disabled,immersive_mode,rotation_mode, show_dialog);
+        showAdCallback = callbackContext;
 		//adRewardCallback = callbackContext;
 	}
 	
@@ -292,6 +290,14 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 		if(cordova.getActivity()!=null && cordova.getActivity() instanceof TapsellAdActivity)
 		{
 			((TapsellAdActivity)(cordova.getActivity())).onClose();
+		}
+	}
+	
+	private void dismiss(JSONArray args, CallbackContext callbackContext) throws JSONException
+	{
+		if(cordova.getActivity()!=null && cordova.getActivity() instanceof TapsellAdActivity)
+		{
+			((TapsellAdActivity)(cordova.getActivity())).onDismiss();
 		}
 	}
 	
@@ -466,6 +472,43 @@ public class TapsellCordovaInterface extends CordovaPlugin implements TapsellCor
 			e.printStackTrace();
 		}
     }
-	
+
+    @Override
+    public void onOpened(String zoneId, String adId) {
+        JSONObject result = new JSONObject();
+        try{
+            result.put("action","onOpened");
+            result.put("zoneId",zoneId);
+            result.put("adId",adId);
+            PluginResult resultado = new PluginResult(PluginResult.Status.OK, result);
+            resultado.setKeepCallback(true);
+            if(showAdCallback!=null)
+            {
+                showAdCallback.sendPluginResult(resultado);
+            }
+        }catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onClosed(String zoneId, String adId) {
+        JSONObject result = new JSONObject();
+        try{
+            result.put("action","onClosed");
+            result.put("zoneId",zoneId);
+            result.put("adId",adId);
+            PluginResult resultado = new PluginResult(PluginResult.Status.OK, result);
+            resultado.setKeepCallback(true);
+            if(showAdCallback!=null)
+            {
+                showAdCallback.sendPluginResult(resultado);
+            }
+        }catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
 }
