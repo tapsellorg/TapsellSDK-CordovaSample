@@ -18,6 +18,7 @@
  */
 var requestBtn = null;
 var showBtn = null;
+var requestBannerBtn = null;
 var adId = null;
  
 var app = {
@@ -35,6 +36,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
 		requestBtn = document.getElementById('btnRequestAd');
 		showBtn = document.getElementById('btnShowAd');
+		requestBannerBtn = document.getElementById('btnRequestBannerAd');
 		requestBtn.setAttribute('style', 'display:none;');
 		showBtn.setAttribute('style', 'display:none;');
     },
@@ -48,7 +50,8 @@ var app = {
 		requestBtn.setAttribute('style', 'display:block;');
 		requestBtn.addEventListener('click',app.onRequestAd);
 		showBtn.addEventListener('click',app.onShowAd);
-		tapsell.initialize('rashssjnjiaeqqeihgjdsihajkbkqgeqqdoftpafmlcoofdflejgmttlercbsdfbnjnjqs');
+		requestBannerBtn.addEventListener('click',app.onRequestBannerAd);
+		tapsell.initialize('mpkdstpefkoalikkgfslakdspdhikdiddkkgbfpstnaqmkqmgtasdmgtcmitlenscamnik');
 		tapsell.setDebugMode(true);
 		tapsell.setAutoHandlePermissions(true);
 		tapsell.setMaxAllowedBandwidthUsagePercentage(50);
@@ -104,6 +107,11 @@ var app = {
 			}
 		});
 	
+	},
+	
+	onRequestBannerAd: function() {
+		console.log('tapsell onRequestBannerAd');
+		tapsell.requestBannerAd("5a0041c8e995ee0001937574",tapsell_banner_320x50,tapsell_top,tapsell_center);
 	},
 	
 	onShowAd: function() {

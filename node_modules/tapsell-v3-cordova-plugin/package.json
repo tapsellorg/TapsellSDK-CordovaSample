@@ -1,57 +1,35 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "tapsell-v3-cordova-plugin",
-        "scope": null,
-        "escapedName": "tapsell-v3-cordova-plugin",
-        "name": "tapsell-v3-cordova-plugin",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
-      },
-      "H:\\Cordova\\Projects\\TapsellSDKv3Sample\\node_modules"
-    ]
-  ],
-  "_from": "tapsell-v3-cordova-plugin@latest",
-  "_id": "tapsell-v3-cordova-plugin@3.0.44",
-  "_inCache": true,
+  "_from": "tapsell-v3-cordova-plugin",
+  "_id": "tapsell-v3-cordova-plugin@3.0.45",
+  "_inBundle": false,
+  "_integrity": "sha512-tTU+50IMmt57d+PCycN9s0oPL2iR/QNT+U7n9kYFpINYl8Kox/AmVAjWYLI3J1x8edr5BqGeHsDPvsO1lUo8NA==",
   "_location": "/tapsell-v3-cordova-plugin",
-  "_nodeVersion": "6.11.0",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/tapsell-v3-cordova-plugin-3.0.44.tgz_1508141602134_0.6768467568326741"
-  },
-  "_npmUser": {
-    "name": "sinarezaei",
-    "email": "sinarezaei1991@gmail.com"
-  },
-  "_npmVersion": "3.10.10",
   "_phantomChildren": {},
   "_requested": {
+    "type": "tag",
+    "registry": true,
     "raw": "tapsell-v3-cordova-plugin",
-    "scope": null,
-    "escapedName": "tapsell-v3-cordova-plugin",
     "name": "tapsell-v3-cordova-plugin",
+    "escapedName": "tapsell-v3-cordova-plugin",
     "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/tapsell-v3-cordova-plugin/-/tapsell-v3-cordova-plugin-3.0.44.tgz",
-  "_shasum": "8d560a85c547dc053d8c7000c5ee307913ae8fcc",
-  "_shrinkwrap": null,
+  "_resolved": "https://registry.npmjs.org/tapsell-v3-cordova-plugin/-/tapsell-v3-cordova-plugin-3.0.45.tgz",
+  "_shasum": "4b7510bc94a20b323dd6cf46bd532f764e84d11f",
   "_spec": "tapsell-v3-cordova-plugin",
-  "_where": "H:\\Cordova\\Projects\\TapsellSDKv3Sample\\node_modules",
+  "_where": "C:\\Users\\Mohammad\\Desktop\\TapsellSDK_v3_Cordova_Sample",
   "author": {
     "name": "Sina Rezaei"
   },
   "bugs": {
     "url": "https://github.com/hermamitr/TapsellSDK_v3_Cordova/issues"
   },
+  "bundleDependencies": false,
   "cordova": {
     "id": "tapsell-v3-cordova-plugin",
     "platforms": [
@@ -59,21 +37,14 @@
       "ios"
     ]
   },
-  "dependencies": {},
+  "deprecated": false,
   "description": "Tapsell sdk v3 for cordova",
-  "devDependencies": {},
-  "directories": {},
-  "dist": {
-    "shasum": "8d560a85c547dc053d8c7000c5ee307913ae8fcc",
-    "tarball": "https://registry.npmjs.org/tapsell-v3-cordova-plugin/-/tapsell-v3-cordova-plugin-3.0.44.tgz"
-  },
   "engines": [
     {
       "name": "cordova",
       "version": ">=3.0.0"
     }
   ],
-  "gitHead": "ad4427a59556f33c3bda09be44b97192ec6b74a5",
   "homepage": "https://github.com/hermamitr/TapsellSDK_v3_Cordova#readme",
   "keywords": [
     "tapsell",
@@ -84,19 +55,10 @@
     "cordova-ios"
   ],
   "license": "Apache 2.0",
-  "maintainers": [
-    {
-      "name": "sinarezaei",
-      "email": "sinarezaei1991@gmail.com"
-    }
-  ],
   "name": "tapsell-v3-cordova-plugin",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hermamitr/TapsellSDK_v3_Cordova.git"
   },
-  "scripts": {},
-  "version": "3.0.44"
+  "version": "3.0.45"
 }
