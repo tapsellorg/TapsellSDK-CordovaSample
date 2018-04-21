@@ -18,6 +18,6 @@
     "cordova-ios": "~4.4.0",
     "cordova-plugin-console": "^1.1.0",
     "cordova-plugin-whitelist": "1",
-    "tapsell-v3-cordova-plugin": "^3.0.45"
+    "tapsell-v3-cordova-plugin": "^3.0.47"
   }
 }

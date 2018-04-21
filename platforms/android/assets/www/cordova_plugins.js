@@ -13,7 +13,7 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-console": "1.1.0",
-    "tapsell-v3-cordova-plugin": "3.0.45"
+    "tapsell-v3-cordova-plugin": "3.0.47"
 };
 // BOTTOM OF METADATA
 });

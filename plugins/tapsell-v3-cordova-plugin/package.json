@@ -1,6 +1,6 @@
 {
   "_from": "tapsell-v3-cordova-plugin",
-  "_id": "tapsell-v3-cordova-plugin@3.0.45",
+  "_id": "tapsell-v3-cordova-plugin@3.0.47",
   "_inBundle": false,
   "_integrity": "sha512-tTU+50IMmt57d+PCycN9s0oPL2iR/QNT+U7n9kYFpINYl8Kox/AmVAjWYLI3J1x8edr5BqGeHsDPvsO1lUo8NA==",
   "_location": "/tapsell-v3-cordova-plugin",
@@ -19,7 +19,7 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/tapsell-v3-cordova-plugin/-/tapsell-v3-cordova-plugin-3.0.45.tgz",
+  "_resolved": "https://registry.npmjs.org/tapsell-v3-cordova-plugin/-/tapsell-v3-cordova-plugin-3.0.47.tgz",
   "_shasum": "4b7510bc94a20b323dd6cf46bd532f764e84d11f",
   "_spec": "tapsell-v3-cordova-plugin",
   "_where": "C:\\Users\\Mohammad\\Desktop\\TapsellSDK_v3_Cordova_Sample",
@@ -60,5 +60,5 @@
     "type": "git",
     "url": "git+https://github.com/hermamitr/TapsellSDK_v3_Cordova.git"
   },
-  "version": "3.0.45"
+  "version": "3.0.47"
 }
