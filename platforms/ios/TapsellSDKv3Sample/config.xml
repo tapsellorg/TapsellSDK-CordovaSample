@@ -18,6 +18,10 @@
     <feature name="Console">
         <param name="ios-package" value="CDVLogger" />
     </feature>
+    <feature name="TapsellCordovaInterface">
+        <param name="ios-package" value="TapsellCordovaInterface" />
+        <param name="onload" value="true" />
+    </feature>
     <name>TapsellSDKv3Sample</name>
     <description>
         A sample app which shows how tapsell sdk v3 works.
@@ -48,8 +52,4 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
-    <feature name="TapsellCordovaInterface">
-        <param name="ios-package" value="TapsellCordovaInterface" />
-        <param name="onload" value="true" />
-    </feature>
 </widget>
