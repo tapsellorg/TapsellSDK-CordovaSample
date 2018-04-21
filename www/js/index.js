@@ -51,7 +51,7 @@ var app = {
 		requestBtn.addEventListener('click',app.onRequestAd);
 		showBtn.addEventListener('click',app.onShowAd);
 		requestBannerBtn.addEventListener('click',app.onRequestBannerAd);
-		tapsell.initialize('mpkdstpefkoalikkgfslakdspdhikdiddkkgbfpstnaqmkqmgtasdmgtcmitlenscamnik');
+		tapsell.initialize('mioeqormndnommjqoapteerhkhccdttralkisksfabprknrthaagbofcohiojadbiqhcrc');
 		tapsell.setDebugMode(true);
 		tapsell.setAutoHandlePermissions(true);
 		tapsell.setMaxAllowedBandwidthUsagePercentage(50);
@@ -74,7 +74,7 @@ var app = {
 	
 	onRequestAd: function() {
 		console.log('tapsell onRequestAd');
-		tapsell.requestAd(null,false,function(result){
+		tapsell.requestAd("592be81646846575539c6a25",false,function(result){
 			if(result['action']=='onAdAvailable')
 			{	
 				zoneId = result['zoneId']; 
@@ -111,7 +111,7 @@ var app = {
 	
 	onRequestBannerAd: function() {
 		console.log('tapsell onRequestBannerAd');
-		tapsell.requestBannerAd("5a0041c8e995ee0001937574",tapsell_banner_320x50,tapsell_top,tapsell_center);
+		tapsell.requestBannerAd("5adb43e82b13ec00010c6e1a",tapsell_banner_320x50,tapsell_top,tapsell_center);
 	},
 	
 	onShowAd: function() {
