@@ -17,8 +17,8 @@
 		3047A5141AB8059700498E2A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5111AB8059700498E2A /* build.xcconfig */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		92D31E572CA14C5AAED769D8 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A60154C90DB8487EBAC700E1 /* CDVLogger.m */; };
-		B454E993DE944B99BC3D3A0A /* TapsellCordovaInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 2054EAA606A14D48A592C033 /* TapsellCordovaInterface.m */; };
-		C7904BB11CC24139930ABB62 /* TapsellSDKv3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8018BE4A5448489694225C62 /* TapsellSDKv3.framework */; };
+		BD5E6F46FA124BBE97756A11 /* TapsellCordovaInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 636AA11FCD974373B299B5F3 /* TapsellCordovaInterface.m */; };
+		BB5A045B5C624216A191BDC4 /* TapsellSDKv3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F42B4A6924459BB8FFCC19 /* TapsellSDKv3.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +61,9 @@
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A60154C90DB8487EBAC700E1 /* CDVLogger.m */ = {isa = PBXFileReference; name = "CDVLogger.m"; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		3899DD8686CC4156A7C7AFF7 /* CDVLogger.h */ = {isa = PBXFileReference; name = "CDVLogger.h"; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		2054EAA606A14D48A592C033 /* TapsellCordovaInterface.m */ = {isa = PBXFileReference; name = "TapsellCordovaInterface.m"; path = "tapsell-v3-cordova-plugin/TapsellCordovaInterface.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		BA1BEAEEDE9940DF834A195C /* TapsellCordovaInterface.h */ = {isa = PBXFileReference; name = "TapsellCordovaInterface.h"; path = "tapsell-v3-cordova-plugin/TapsellCordovaInterface.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		8018BE4A5448489694225C62 /* TapsellSDKv3.framework */ = {isa = PBXFileReference; name = "TapsellSDKv3.framework"; path = "System/Library/Frameworks/TapsellSDKv3.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		636AA11FCD974373B299B5F3 /* TapsellCordovaInterface.m */ = {isa = PBXFileReference; name = "TapsellCordovaInterface.m"; path = "tapsell-v3-cordova-plugin/TapsellCordovaInterface.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		3C096266ED114EE0889763D8 /* TapsellCordovaInterface.h */ = {isa = PBXFileReference; name = "TapsellCordovaInterface.h"; path = "tapsell-v3-cordova-plugin/TapsellCordovaInterface.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		82F42B4A6924459BB8FFCC19 /* TapsellSDKv3.framework */ = {isa = PBXFileReference; name = "TapsellSDKv3.framework"; path = "System/Library/Frameworks/TapsellSDKv3.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				C7904BB11CC24139930ABB62 /* TapsellSDKv3.framework in Frameworks */,
+				BB5A045B5C624216A191BDC4 /* TapsellSDKv3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +143,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8018BE4A5448489694225C62 /* TapsellSDKv3.framework */,
+				82F42B4A6924459BB8FFCC19 /* TapsellSDKv3.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,8 +171,8 @@
 			children = (
 				A60154C90DB8487EBAC700E1 /* CDVLogger.m */,
 				3899DD8686CC4156A7C7AFF7 /* CDVLogger.h */,
-				2054EAA606A14D48A592C033 /* TapsellCordovaInterface.m */,
-				BA1BEAEEDE9940DF834A195C /* TapsellCordovaInterface.h */,
+				636AA11FCD974373B299B5F3 /* TapsellCordovaInterface.m */,
+				3C096266ED114EE0889763D8 /* TapsellCordovaInterface.h */,
 			);
 			name = Plugins;
 			path = "TapsellSDKv3Sample/Plugins";
@@ -286,7 +286,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				92D31E572CA14C5AAED769D8 /* CDVLogger.m in Sources */,
-				B454E993DE944B99BC3D3A0A /* TapsellCordovaInterface.m in Sources */,
+				BD5E6F46FA124BBE97756A11 /* TapsellCordovaInterface.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

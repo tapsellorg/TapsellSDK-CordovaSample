@@ -30,7 +30,7 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.3.1",
     "cordova-plugin-console": "1.1.0",
-    "tapsell-v3-cordova-plugin": "3.0.47"
+    "tapsell-v3-cordova-plugin": "3.1.13"
 };
 // BOTTOM OF METADATA
 });

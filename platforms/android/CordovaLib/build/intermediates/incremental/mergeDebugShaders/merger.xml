@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\Mohammad\Desktop\TapsellSDK_v3_Cordova_Sample\platforms\android\CordovaLib\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\Mohammad\Desktop\TapsellSDK_v3_Cordova_Sample\platforms\android\CordovaLib\src\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\Mohammad\Desktop\Tapsell\Cordova_Sample\TapsellSDK_v3_Cordova_Sample\platforms\android\CordovaLib\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\Mohammad\Desktop\Tapsell\Cordova_Sample\TapsellSDK_v3_Cordova_Sample\platforms\android\CordovaLib\src\debug\shaders"/></dataSet></merger>

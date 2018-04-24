@@ -1,8 +1,8 @@
 {
   "_from": "tapsell-v3-cordova-plugin",
-  "_id": "tapsell-v3-cordova-plugin@3.0.47",
+  "_id": "tapsell-v3-cordova-plugin@3.1.13",
   "_inBundle": false,
-  "_integrity": "sha512-tTU+50IMmt57d+PCycN9s0oPL2iR/QNT+U7n9kYFpINYl8Kox/AmVAjWYLI3J1x8edr5BqGeHsDPvsO1lUo8NA==",
+  "_integrity": "sha1-Gq8NzE63z5kieFN3GPJ/BsW5gRg=",
   "_location": "/tapsell-v3-cordova-plugin",
   "_phantomChildren": {},
   "_requested": {
@@ -19,12 +19,12 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/tapsell-v3-cordova-plugin/-/tapsell-v3-cordova-plugin-3.0.47.tgz",
-  "_shasum": "4b7510bc94a20b323dd6cf46bd532f764e84d11f",
+  "_resolved": "https://registry.npmjs.org/tapsell-v3-cordova-plugin/-/tapsell-v3-cordova-plugin-3.1.13.tgz",
+  "_shasum": "1aaf0dcc4eb7cf992278537718f27f06c5b98118",
   "_spec": "tapsell-v3-cordova-plugin",
-  "_where": "C:\\Users\\Mohammad\\Desktop\\TapsellSDK_v3_Cordova_Sample",
+  "_where": "C:\\Users\\Mohammad\\Desktop\\Tapsell\\Cordova_Sample\\TapsellSDK_v3_Cordova_Sample",
   "author": {
-    "name": "Sina Rezaei"
+    "name": "Mohammad Hadipour"
   },
   "bugs": {
     "url": "https://github.com/hermamitr/TapsellSDK_v3_Cordova/issues"
@@ -60,5 +60,5 @@
     "type": "git",
     "url": "git+https://github.com/hermamitr/TapsellSDK_v3_Cordova.git"
   },
-  "version": "3.0.47"
+  "version": "3.1.13"
 }
