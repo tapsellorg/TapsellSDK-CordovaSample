@@ -111,7 +111,7 @@ var app = {
 	
 	onRequestBannerAd: function() {
 		console.log('tapsell onRequestBannerAd');
-		tapsell.requestBannerAd("5adb43e82b13ec00010c6e1a",tapsell_banner_320x50,tapsell_top,tapsell_center);
+		tapsell.requestBannerAd("5a844ceeada66f0001edb032",tapsell_banner_320x50,tapsell_top,tapsell_center);
 	},
 	
 	onShowAd: function() {
