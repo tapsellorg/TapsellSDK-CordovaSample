@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ir.tapsell.sample" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>TapsellSDKv3Sample</name>
+<widget id="ir.tapsell.sample.cordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Tapsell Cordova Sample</name>
     <description>
-        A sample app which shows how tapsell sdk v3 works.
+        A sample app which shows how tapsell cordova sdk v3 works.
     </description>
-    <author email="sinarezaei1991@gmail.com" href="http://tapsell.ir">
-        Sina Rezaei
+    <author email="info@tapsell.ir" href="http://tapsell.ir">
+        Tapsell
     </author>
     <content src="index.html" />
     <access origin="*" />

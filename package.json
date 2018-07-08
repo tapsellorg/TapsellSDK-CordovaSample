@@ -1,7 +1,7 @@
 {
-  "name": "ir.tapsell.sample",
+  "name": "ir.tapsell.sample.cordova",
   "version": "0.0.1",
-  "displayName": "TapsellSDKv3Sample",
+  "displayName": "Tapsell Cordova Sample",
   "cordova": {
     "platforms": [
       "android",
