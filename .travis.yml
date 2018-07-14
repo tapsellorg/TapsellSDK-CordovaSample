@@ -13,14 +13,9 @@ android:
     - 'android-sdk-preview-license-52d11cd2'
     - 'android-sdk-license-.+'
     - 'google-gdk-license-.+'
-      
-addons:
-  apt:
-    packages:
-    - npm
   
 before_script:
-  - npm config set strict-ssl false
+  - sudo apt install npm
   - npm cache clean
   - npm install -g cordova
   - cordova platform rm android
