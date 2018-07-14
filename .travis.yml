@@ -19,7 +19,7 @@ before_script:
   - sudo apt upgrade
   - sudo apt install npm
   - npm config set strict-ssl false
-  - npm install -g cordova
+  - sudo npm install -g cordova
   - cordova platform rm android
   - cordova platform add android
 
