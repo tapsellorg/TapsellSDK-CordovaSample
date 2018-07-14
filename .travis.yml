@@ -15,6 +15,7 @@ android:
     - 'google-gdk-license-.+'
   
 before_script:
+  - sudo apt update
   - sudo apt install npm
   - npm cache clean
   - npm install -g cordova
