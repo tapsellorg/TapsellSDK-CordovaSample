@@ -1,0 +1,17 @@
+language: android
+
+node_js:
+  - 5.5
+  
+install:
+  - npm cache clean
+  - npm install
+  - npm install -g cordova
+
+before_script:
+  - cordova platform rm android
+  - cordova platform add android
+
+script:
+  - cordova prepare
+  - cordova build andro
