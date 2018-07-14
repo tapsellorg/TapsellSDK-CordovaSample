@@ -22,7 +22,6 @@ addons:
 before_script:
   - npm config set strict-ssl false
   - npm cache clean
-  - npm install
   - npm install -g cordova
   - cordova platform rm android
   - cordova platform add android
