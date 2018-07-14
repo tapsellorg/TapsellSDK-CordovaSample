@@ -1,7 +1,5 @@
 language: android
 
-sudo: true
-
 android:
   components:
     - tools
@@ -15,17 +13,20 @@ android:
     - 'android-sdk-preview-license-52d11cd2'
     - 'android-sdk-license-.+'
     - 'google-gdk-license-.+'
-
-
-before_script:
-  - cordova platform rm android
-  - cordova platform add android
-  
+      
+addons:
+  apt:
+    packages:
+    - npm
+    
 install:
-  - apt install npm
   - npm cache clean
   - npm install
   - npm install -g cordova
+  
+before_script:
+  - cordova platform rm android
+  - cordova platform add android
 
 script:
   - cordova prepare
