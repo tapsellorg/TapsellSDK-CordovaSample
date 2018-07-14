@@ -16,11 +16,11 @@ android:
 
 
 before_script:
-  - apt install npm
   - cordova platform rm android
   - cordova platform add android
   
 install:
+  - apt install npm
   - npm cache clean
   - npm install
   - npm install -g cordova
