@@ -25,9 +25,10 @@ install:
   - npm install -g cordova
   
 before_script:
+  - npm config set strict-ssl false
   - cordova platform rm android
   - cordova platform add android
 
 script:
   - cordova prepare
-  - cordova build andro
+  - cordova build android
