@@ -17,7 +17,7 @@ android:
 before_script:
   - sudo apt update
   - sudo apt install npm
-  - npm cache clean
+  - npm config set strict-ssl false
   - npm install -g cordova
   - cordova platform rm android
   - cordova platform add android
