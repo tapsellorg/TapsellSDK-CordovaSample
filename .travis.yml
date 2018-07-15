@@ -20,7 +20,7 @@ before_script:
   - sudo apt install npm
   - npm config set strict-ssl false
   - sudo npm install -g cordova
-  - ln -s /usr/bin/nodejs /usr/bin/node
+  - sudo ln -s /usr/bin/nodejs /usr/bin/node
   - cordova platform add android
 
 script:
