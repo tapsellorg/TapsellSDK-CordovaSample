@@ -1,1 +1,1 @@
-# TapsellSDK-CordovaSample [![Build Status](https://travis-ci.com/tapsellorg/TapsellSDK-CordovaSample.svg?branch=master)](https://travis-ci.com/tapsellorg/TapsellSDK-CordovaSample)
+# TapsellSDK-CordovaSample [![CircleCI](https://circleci.com/gh/tapsellorg/TapsellSDK-CordovaSample.svg?style=svg)](https://circleci.com/gh/tapsellorg/TapsellSDK-CordovaSample)
